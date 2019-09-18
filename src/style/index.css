@@ -1,0 +1,40 @@
+/*  1. main presentation design / organization
+*/
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr [right-start] 2fr [right-end] 1fr [middle-start] 80vh [middle-end] 1fr [left-start] 2fr [left-end] 1fr;
+      grid-template-columns: 1fr [right-start] 2fr [right-end] 1fr [middle-start] 80vh [middle-end] 1fr [left-start] 2fr [left-end] 1fr;
+  -ms-grid-rows: 17vh [display-start] 200px [display-end] 50px [inputs-start] auto [inputs-end] 3vh;
+      grid-template-rows: 17vh [display-start] 200px [display-end] 50px [inputs-start] auto [inputs-end] 3vh;
+}
+
+/*  2. header design
+*/
+.header {
+  grid-column: middle-start / middle-end;
+}
+
+#Display {
+  width: 100%;
+  height: 200px;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+  grid-column: right-start / left-end;
+  grid-row: display-start / display-end;
+}
+
+#Inputs {
+  width: 100%;
+  min-height: 200px;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+  grid-column: right-start / left-end;
+  grid-row: inputs-start / inputs-end;
+}
+/*# sourceMappingURL=index.css.map */

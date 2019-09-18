@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './style/index.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Display from './Display'
+import Inputs from './Inputs'
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      inputsNumber: 1,
+      units: []
+    }
+  }
+
+  handleInputChange() {
+
+  }
+
+  render() {
+    return (
+      <div id="App" className="main-grid">
+        <div className='header'>
+          <h1>Formula Generator</h1>
+          <p>Here is the KFs Formula Generator, enter your inputs and require units, it will do the bad work.</p>
+        </div>
+        <Display />
+        <Inputs handleInputChange={this.handleInputChange} inputsNumber={this.state.inputsNumber}/>
+      </div>
+    )
+  }
 }
 
 export default App;
